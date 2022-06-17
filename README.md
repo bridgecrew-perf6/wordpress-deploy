@@ -47,16 +47,16 @@ Luna is a simple portfolio theme which highlights your project content in a beau
 * Fix: number input bug in theme customizer
 
 = 1.1.5 =
-* Fix: removed http from Skype social icons
+* Fix: removed http from Skype social icons 
 
 = 1.1.4 =
-* Update: Tested with WordPress 4.5, Updating Font Awesome icons to 4.6, Added Snapchat and Weibo social icon options
+* Update: Tested with WordPress 4.5, Updating Font Awesome icons to 4.6, Added Snapchat and Weibo social icon options 
 
 = 1.1.3 =
-* Update: added many new social icon options to MT - Social Icons widget
+* Update: added many new social icon options to MT - Social Icons widget 
 
 = 1.1.2 =
-* Fix: minor bug fixes with active plugins and theme customizer
+* Fix: minor bug fixes with active plugins and theme customizer 
 
 = 1.1.1 =
 * Update: updated demo link in theme description
