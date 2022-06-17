@@ -1,62 +1,148 @@
-/**
-Theme Name: Astra
-Theme URI: https://wpastra.com/
-Author: Brainstorm Force
-Author URI: https://wpastra.com/about/?utm_source=theme_preview&utm_medium=author_link&utm_campaign=astra_theme
-Description: Astra is fast, fully customizable & beautiful WordPress theme suitable for blog, personal portfolio, business website and WooCommerce storefront. It is very lightweight (less than 50KB on frontend) and offers unparalleled speed. Built with SEO in mind, Astra comes with Schema.org code integrated and is Native AMP ready so search engines will love your site. It offers special features and templates so it works perfectly with all page builders like Elementor, Beaver Builder, Visual Composer, SiteOrigin, Divi, etc. Some of the other features: # WooCommerce Ready # Responsive # RTL & Translation Ready # Extendible with premium addons # Regularly updated # Designed, Developed, Maintained & Supported by Brainstorm Force. Looking for a perfect base theme? Look no further. Astra is fast, fully customizable and WooCommerce ready theme that you can use for building any kind of website!
-Version: 3.8.2
-Requires at least: 5.3
+/*
+Theme Name: Twenty Twenty-Two
+Theme URI: https://wordpress.org/themes/twentytwentytwo/
+Author: the WordPress team
+Author URI: https://wordpress.org/
+Description: Built on a solidly designed foundation, Twenty Twenty-Two embraces the idea that everyone deserves a truly unique website. The theme’s subtle styles are inspired by the diversity and versatility of birds: its typography is lightweight yet strong, its color palette is drawn from nature, and its layout elements sit gently on the page. The true richness of Twenty Twenty-Two lies in its opportunity for customization. The theme is built to take advantage of the Full Site Editing features introduced in WordPress 5.9, which means that colors, typography, and the layout of every single page on your site can be customized to suit your vision. It also includes dozens of block patterns, opening the door to a wide range of professionally designed layouts in just a few clicks. Whether you’re building a single-page website, a blog, a business website, or a portfolio, Twenty Twenty-Two will help you create a site that is uniquely yours.
+Requires at least: 5.9
 Tested up to: 6.0
-Requires PHP: 5.3
+Requires PHP: 5.6
+Version: 1.2
 License: GNU General Public License v2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: astra
-Domain Path: /languages
-Tags: custom-menu, custom-logo, entertainment, one-column, two-columns, left-sidebar, e-commerce, right-sidebar, custom-colors, editor-style, featured-images, full-width-template, microformats, post-formats, rtl-language-support, theme-options, threaded-comments, translation-ready, blog
-AMP: true
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: twentytwentytwo
+Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, block-patterns, rtl-language-support, sticky-post, threaded-comments
 
-Astra WordPress Theme, Copyright 2020 WPAstra.
-Astra is distributed under the terms of the GNU GPL.
+Twenty Twenty-Two WordPress Theme, (C) 2021 WordPress.org
+Twenty Twenty-Two is distributed under the terms of the GNU GPL.
+*/
 
-Astra is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
+/*
+ * Font smoothing.
+ * This is a niche setting that will not be available via Global Styles.
+ * https://github.com/WordPress/gutenberg/issues/35934
+ */
 
-Normalizing styles have been helped along thanks to the fine work of.
-Nicolas Gallagher and Jonathan Neal https://necolas.github.com/normalize.css/
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
 
-Astra icon font is based on IcoMoon-Free vector icon by Keyamoon.
-IcoMoon-Free vector icon distributed under terms of CC BY 4.0 or GPL. (https://creativecommons.org/licenses/by/4.0/ or https://www.gnu.org/licenses/gpl.html)
-Source: http://keyamoon.com/
+/*
+ * Text and navigation link styles.
+ * Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/27075
+ */
 
-Flexibility is a JavaScript polyfill for Flexbox By Jonathan Neal, 10up. (https://github.com/jonathantneal/flexibility)
-Licensed under MIT ( https://github.com/jonathantneal/flexibility/blob/master/LICENSE.md )
+a {
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.25ch;
+}
 
-Screenshot image is a collage of actual sites created using the Astra WordPress Theme.
+a:hover,
+a:focus {
+	text-decoration-style: dashed;
+}
 
-Icons used in the Screenshot image are all licensed under Creative Commons ( CC BY 4.0 ) License ( https://fontawesome.com/license/free )
-https://fontawesome.com/v5.15/icons/store?style=solid
-https://fontawesome.com/v5.15/icons/shopping-cart?style=solid
-https://fontawesome.com/v5.15/icons/pen-square?style=solid
-https://fontawesome.com/v5.15/icons/user-tie?style=solid
-https://fontawesome.com/v5.15/icons/user-tie?style=solid
+a:active {
+	text-decoration: none;
+}
 
-Illustrations used in the Screenshot images are all licensed under Creative Commons ( CC0 ) License ( https://gumroad.com/l/humaaans )
-https://websitedemos.net/web-design-agency-08/wp-content/uploads/sites/796/2021/05/standing-24.png
-https://websitedemos.net/web-design-agency-08/wp-content/uploads/sites/796/2021/05/sitting-2.png
+.wp-block-navigation .wp-block-navigation-item a:hover,
+.wp-block-navigation .wp-block-navigation-item a:focus {
+	text-decoration: underline;
+	text-decoration-style: solid;
+}
 
-Hand-drawn illustrations used are created by Brainstorm Force and released under Creative Commons ( CC0 ) License.
-https://websitedemos.net/web-design-agency-08/wp-content/uploads/sites/796/2021/05/girl-with-image-container.png
-https://websitedemos.net/web-design-agency-08/wp-content/uploads/sites/796/2021/05/boy-with-code-container.png
-https://websitedemos.net/web-design-agency-08/wp-content/uploads/sites/796/2021/05/web-browser.png
+/*
+ * Search and File Block button styles.
+ * Necessary until the following issues are resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/36444
+ * https://github.com/WordPress/gutenberg/issues/27760
+ */
 
-The same site as screenshot can be imported from here https://websitedemos.net/web-design-agency-08/.
+.wp-block-search__button,
+.wp-block-file .wp-block-file__button {
+	background-color: var(--wp--preset--color--primary);
+	border-radius: 0;
+	border: none;
+	color: var(--wp--preset--color--background);
+	font-size: var(--wp--preset--font-size--medium);
+	padding: calc(.667em + 2px) calc(1.333em + 2px);
+}
 
-For more information, refer to this document on how to create a page like in the screenshot - https://wpastra.com/docs/replicating-the-screenshot/.
+/*
+ * Button hover styles.
+ * Necessary until the following issue is resolved in Gutenberg:
+ * https://github.com/WordPress/gutenberg/issues/27075
+ */
 
-Astra default breadcrumb is based on Breadcrumb Trail by Justin Tadlock. (https://github.com/justintadlock/breadcrumb-trail)
-Breadcrumb Trail is distributed under the terms of the GNU GPL v2 or later.
+.wp-block-search__button:hover,
+.wp-block-file .wp-block-file__button:hover,
+.wp-block-button__link:hover {
+	opacity: 0.90;
+}
 
-Astra local fonts feature is based on Webfonts Loader by WordPress Themes Team (WPTT). (https://github.com/WPTT/webfont-loader)
-Licensed under MIT ( https://github.com/WPTT/webfont-loader/blob/master/LICENSE )
+/*
+ * Alignment styles.
+ * These rules are temporary, and should not be relied on or
+ * modified too heavily by themes or plugins that build on
+ * Twenty Twenty-Two. These are meant to be a precursor to
+ * a global solution provided by the Block Editor.
+ *
+ * Relevant issues:
+ * https://github.com/WordPress/gutenberg/issues/35607
+ * https://github.com/WordPress/gutenberg/issues/35884
+ */
 
-/* Note: The CSS files are loaded from assets/css/ folder. */
+.wp-site-blocks,
+body > .is-root-container,
+.edit-post-visual-editor__post-title-wrapper,
+.wp-block-group.alignfull,
+.wp-block-group.has-background,
+.wp-block-cover.alignfull,
+.is-root-container .wp-block[data-align="full"] > .wp-block-group,
+.is-root-container .wp-block[data-align="full"] > .wp-block-cover {
+	padding-left: var(--wp--custom--spacing--outer);
+	padding-right: var(--wp--custom--spacing--outer);
+}
+
+.wp-site-blocks .alignfull,
+.wp-site-blocks > .wp-block-group.has-background,
+.wp-site-blocks > .wp-block-cover,
+.wp-site-blocks > .wp-block-template-part > .wp-block-group.has-background,
+.wp-site-blocks > .wp-block-template-part > .wp-block-cover,
+body > .is-root-container > .wp-block-cover,
+body > .is-root-container > .wp-block-template-part > .wp-block-group.has-background,
+body > .is-root-container > .wp-block-template-part > .wp-block-cover,
+.is-root-container .wp-block[data-align="full"] {
+	margin-left: calc(-1 * var(--wp--custom--spacing--outer)) !important;
+	margin-right: calc(-1 * var(--wp--custom--spacing--outer)) !important;
+	width: unset;
+}
+
+/* Blocks inside columns don't have negative margins. */
+.wp-site-blocks .wp-block-columns .wp-block-column .alignfull,
+.is-root-container .wp-block-columns .wp-block-column .wp-block[data-align="full"],
+/* We also want to avoid stacking negative margins. */
+.wp-site-blocks .alignfull:not(.wp-block-group) .alignfull,
+.is-root-container .wp-block[data-align="full"] > *:not(.wp-block-group) .wp-block[data-align="full"] {
+	margin-left: auto !important;
+	margin-right: auto !important;
+	width: inherit;
+}
+
+/*
+ * Responsive menu container padding.
+ * This ensures the responsive container inherits the same
+ * spacing defined above. This behavior may be built into
+ * the Block Editor in the future.
+ */
+
+.wp-block-navigation__responsive-container.is-menu-open {
+	padding-top: var(--wp--custom--spacing--outer);
+	padding-bottom: var(--wp--custom--spacing--large);
+	padding-right: var(--wp--custom--spacing--outer);
+	padding-left: var(--wp--custom--spacing--outer);
+}
+
